@@ -5,6 +5,12 @@ example by: dlefcoe
 darren@redhedge.uk
 twitter: @dlefcoe
 
+
+this is okay, but not great
+reason:
+    use of lambda functions
+    does tkinter.grid allow for resize
+    
 '''
 
 import tkinter as tk
