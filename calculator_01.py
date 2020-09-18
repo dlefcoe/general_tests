@@ -25,26 +25,61 @@ def button_clear():
 def button_add():
     first_number = e.get()
     global f_num
+    global math_type
+
+    math_type = 'addition'
     f_num = int(first_number)
     e.delete(0, tk.END)
     
 def button_subtract():
-    pass
+    first_number = e.get()
+    global f_num
+    global math_type
+
+    math_type = 'subtraction'
+    f_num = int(first_number)
+    e.delete(0, tk.END)
+
 
 def button_multiply():
-    pass
+    first_number = e.get()
+    global f_num
+    global math_type
+
+    math_type = 'multiplication'
+    f_num = int(first_number)
+    e.delete(0, tk.END)
+
 
 def button_divide():
-    pass
+    first_number = e.get()
+    global f_num
+    global math_type
+
+    math_type = 'division'
+    f_num = int(first_number)
+    e.delete(0, tk.END)
+
+
 
 def button_equal():
     second_number = e.get()
     e.delete(0, tk.END)
-    e.insert(0, f_num + int(second_number))
+
+    if math_type == 'addition':
+        e.insert(0, f_num + int(second_number))
+    if math_type == 'subtraction':
+        e.insert(0, f_num - int(second_number))
+    if math_type == 'multiplication':
+        e.insert(0, f_num * int(second_number))
+    if math_type == 'division':
+        e.insert(0, f_num / int(second_number))
+
 
 # top level main window
 root = tk.Tk()
 root.title('simple calc')
+root.iconbitmap('RH_icon.ico')
 
 # make buttons passing arg to fn
 button_01 = tk.Button(root, text='1', padx = 30, pady=30, command=lambda: add_numbers(1))
