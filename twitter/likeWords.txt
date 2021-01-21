@@ -1,0 +1,11 @@
+'#btc','#bitcoin', '#eth', '#ftse','#ftse100', 'ftse250','#aim','#bdev', '$kaz', '#sbry', '$bur','$aal','$vrx', '$fb', '$goog', '$amzn', '$tsla', '$aapl', '#oott', '#crude', '#copper', '#Lithium', '#ev', '#javascript', '#nodejs','#py', '#economy', 'physics','#china', '#fixedincome','#bonds', '#ishares', '#etf', '#earnings'
+
+
+
+
+#btc OR #bitcoin OR #eth OR #ftse OR #ftse100 OR ftse250 OR #aim OR #bdev OR $kaz OR #sbry OR $bur OR $aal OR $vrx OR $fb OR $goog OR $amzn OR $tsla OR $aapl OR #oott OR #crude OR #copper OR #Lithium OR #ev OR #javascript OR #nodejs OR #py OR #economy OR physics OR #china OR #fixedincome OR #bonds OR #ishares OR #etf OR #earnings -airdrop -giveaway
+
+
+
+
+#btc OR #bitcoin OR #eth OR #ftse OR #ftse100 OR ftse250 OR #aim OR #bdev OR $kaz OR #sbry OR $bur OR $aal OR $vrx OR $fb OR $goog OR $amzn OR $tsla OR $aapl OR #oott OR #crude OR #copper OR #Lithium OR #ev OR #javascript OR #nodejs OR #py OR #economy OR physics OR #china OR #fixedincome OR #bonds OR #ishares OR #etf OR #earnings -airdrop -giveaway
