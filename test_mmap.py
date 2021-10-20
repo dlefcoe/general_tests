@@ -20,9 +20,23 @@ f = r'C:\darren\python\test\hello_world.txt'
 def main():
     t0 = time.time()
     regular_io_write(f)
-    regular_io_read(f)
     t1 = time.time()
-    print('time taken:', round(t1-t0, 6), 'seconds')
+    print('time taken to write:', round(t1-t0, 6), 'seconds')
+
+    t2 = time.time()    
+    regular_io_read(f)
+    t3 = time.time()
+    print('time taken to read (standard):', round(t3-t2, 6), 'seconds')
+    m = t3-t2
+
+    t4 = time.time()
+    mmap_io_read(f)
+    t5 = time.time()
+    print('time taken to read (m_map):', round(t5-t4, 6), 'seconds')
+    n = t5-t4
+
+    print()
+    print('times better:', round(m/n, ndigits=5)  )
 
 
 def regular_io_write(filename):
@@ -39,6 +53,7 @@ def regular_io_read(filename):
 
 
 '''
+
 One way to avoid this overhead is to use a memory-mapped file.
 
 You can picture memory mapping as a process in which read and write operations skip 
@@ -50,11 +65,20 @@ A memory-mapped file I/O approach sacrifices memory usage for speed, which is cl
 
 # Here’s the memory-mapping equivalent of the file I/O code you saw before:
 
-def mmap_io(filename):
+def mmap_io_read(filename):
     with open(filename, mode="r", encoding="utf8") as file_obj:
         with mmap.mmap(file_obj.fileno(), length=0, access=mmap.ACCESS_READ) as mmap_obj:
             text = mmap_obj.read()
             print(text)
+
+
+
+'''
+
+The API provided by Python’s mmap file object is very similar to the traditional file object except for one additional superpower:
+Python’s mmap file object can be sliced just like string objects!
+
+'''
 
 
 # entry point hoisting
