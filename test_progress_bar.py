@@ -18,3 +18,13 @@ for i in range(1, total+1):
 print("\nFinished", flush=True)
 
 
+
+# here is a much simpler one
+n = 25
+for i in range(n):
+    time.sleep(0.1)
+    s = '.' * i
+    print(s,  int(i/n*100), end='\r', flush=True)
+
+# the format is
+# print("some string that grows", end='\r', flush=True)
