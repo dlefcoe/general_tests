@@ -28,3 +28,11 @@ for i in range(n):
 
 # the format is
 # print("some string that grows", end='\r', flush=True)
+
+# even easier
+n = 25
+for i in range(n):
+    time.sleep(0.1)
+    print(f'running {i} of {n}', end='\r', flush=True)
+
+
