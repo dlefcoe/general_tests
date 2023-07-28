@@ -28,12 +28,20 @@ import pprint
 def main():
     ''' main entry point for the code '''
 
+    res = outer_for()
+    pprint.pp(res)
+
+    return
+
+
+def outer_for():
+    ''' the outer for loop '''
     ans = []
     for i in range(10):
         res = inner_for(i)
         ans.append(res)
-    pprint.pp(ans)
-    return
+    
+    return ans
 
 
 
