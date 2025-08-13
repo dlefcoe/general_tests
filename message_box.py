@@ -14,11 +14,11 @@ frame lets both exist together.
 
 # imports
 import tkinter as tk
-import os
+# import os
 
 
 # explicit imports
-from PIL import Image, ImageTk
+# from PIL import Image, ImageTk
 from tkinter import messagebox
 
 
