@@ -30,6 +30,10 @@ def main():
 
     res = outer_for()
     pprint.pp(res)
+    print('---')
+
+    res = inner_for(9)
+    pprint.pp(res)
 
     return
 
