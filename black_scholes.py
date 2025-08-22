@@ -17,7 +17,7 @@ t = 240/365 # number of years
 v = 0.30    # volatility in ccy
 y = 'call'     # type, call or put
 
-def black_scholes(r,s,k,t,v,y):
+def black_scholes(r,s,k,t,v,y)->float|None:
     '''calculate bs option price for put or call
     
     args:
@@ -33,16 +33,17 @@ def black_scholes(r,s,k,t,v,y):
     '''
     d1 = (np.log(s/k) + (r + v**2/2)*t) / (v*np.sqrt(t) )
     d2 = d1 - v*np.sqrt(t)
-    try:
-        if y == 'call':
-            price = s*norm.cdf(d1, 0, 1) - k*np.exp(-r*t)*norm.cdf(d2, 0, 1)
-        elif y == 'put':
-            price = k*np.exp(-r*t)*norm.cdf(-d2, 0, 1) - s*norm.cdf(-d1, 0, 1)
-        return price
-    except Exception as e:
-        print('there is an error.', e)
 
-    return 'error'
+    if y == 'call':
+        price = s*norm.cdf(d1, 0, 1) - k*np.exp(-r*t)*norm.cdf(d2, 0, 1)
+    elif y == 'put':
+        price = k*np.exp(-r*t)*norm.cdf(-d2, 0, 1) - s*norm.cdf(-d1, 0, 1)
+    else:
+        raise ValueError('y must be call or put')
+    return price
+
+
+
 
 
 prem = black_scholes(r,s,k,t,v,y)
