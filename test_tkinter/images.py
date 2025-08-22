@@ -2,24 +2,26 @@
 
 example by: dlefcoe
 
-darren@redhedge.uk
+dlefcoe@gmail.com
 twitter: @dlefcoe
 
 '''
 
+import os
 import tkinter as tk
 from PIL import Image, ImageTk
 
-import os
+path_to_this_folder = os.path.dirname(__file__)
+icon_image_file = os.path.join(path_to_this_folder, 'images', 'RH_icon.ico')
 
 
 root = tk.Tk()
-root.title('RedHedge - hybrids images')
-root.iconbitmap('RH_icon.ico')
+root.title('LEM Solutions - hybrids images')
+root.iconbitmap(icon_image_file)
 
 
 # image using full path in windows
-my_img = ImageTk.PhotoImage(Image.open('C:/Users/darren/OneDrive - Redhedge/code/bbg/corpHybrids/dataFolder/charts/adjusted yld curve 2020-08-10 16_20_30.png'))
+my_img = ImageTk.PhotoImage(Image.open(icon_image_file))
 
 
 my_label = tk.Label(image=my_img)
