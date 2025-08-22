@@ -28,8 +28,6 @@ my_label = tk.Label(image=my_img)
 my_label.pack()
 
 
-
-
 button_quit = tk.Button(root, text='Exit program', command=root.quit)
 button_quit.pack()
 
