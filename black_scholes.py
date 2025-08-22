@@ -39,8 +39,8 @@ def black_scholes(r,s,k,t,v,y):
         elif y == 'put':
             price = k*np.exp(-r*t)*norm.cdf(-d2, 0, 1) - s*norm.cdf(-d1, 0, 1)
         return price
-    except:
-        print('there is an error.')
+    except Exception as e:
+        print('there is an error.', e)
 
     return 'error'
 
