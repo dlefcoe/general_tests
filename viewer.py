@@ -10,7 +10,7 @@ twitter: @dlefcoe
 import tkinter as tk
 from PIL import Image, ImageTk
 
-import os
+# import os
 
 
 root = tk.Tk()
@@ -32,8 +32,8 @@ try:
     my_label = tk.Label(image=my_img1)
     my_label.grid(row=0, column=0, columnspan=3)
 
-except:
-    print('no good')
+except Exception as e:
+    print('no good', e)
 
 
 
