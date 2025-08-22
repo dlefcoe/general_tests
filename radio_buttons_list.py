@@ -13,9 +13,9 @@ frame lets both exist together.
 '''
 
 import tkinter as tk
-from PIL import Image, ImageTk
+# from PIL import Image, ImageTk
 
-import os
+# import os
 
 
 root = tk.Tk()
