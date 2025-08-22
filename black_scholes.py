@@ -44,8 +44,6 @@ def black_scholes(r,s,k,t,v,y)->float|None:
 
 
 
-
-
 prem = black_scholes(r,s,k,t,v,y)
 print(round(prem, 2))
 
