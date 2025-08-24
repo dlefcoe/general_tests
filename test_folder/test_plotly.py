@@ -20,6 +20,6 @@ fig.update_layout(
 )
 
 # Display the plot
-fig.show()
+fig.write_html('my_chart.html', auto_open=True)
 
 
