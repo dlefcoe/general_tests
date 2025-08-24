@@ -1,10 +1,15 @@
+
 import plotly.graph_objects as go
 import numpy as np
+
+# Create the data
 x, y = np.meshgrid(np.linspace(-5, 5, 100), np.linspace(-5, 5, 100))
 z = np.sin(np.sqrt(x**2 + y**2))
- 
-fig = go.Figure(data=go.Surface(x=x, y=y, z=z, colorscale='Viridis'))  
- 
+
+# Create the figure
+fig = go.Figure(data=go.Surface(x=x, y=y, z=z, colorscale='Viridis'))
+
+# Update the layout
 fig.update_layout(
     title='Surface Plot',
     scene=dict(
@@ -13,6 +18,8 @@ fig.update_layout(
         zaxis=dict(title='Z')
     )
 )
+
+# Display the plot
 fig.show()
 
 
