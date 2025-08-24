@@ -1,6 +1,9 @@
 
-import plotly.graph_objects as go
+import os
+import time
 import numpy as np
+import plotly.graph_objects as go
+
 
 # Create the data
 x, y = np.meshgrid(np.linspace(-5, 5, 100), np.linspace(-5, 5, 100))
@@ -19,7 +22,22 @@ fig.update_layout(
     )
 )
 
-# Display the plot
-fig.write_html('my_chart.html', auto_open=True)
 
+def display_plotly_chart(fig:go.Figure, chart_file:str = 'my_chart.html'):    
+
+
+    fig.write_html(chart_file, auto_open=True)
+
+    # Add a short delay to give the browser time to open the file
+    print("Opening chart in browser. The file will be deleted in 5 seconds...")
+    time.sleep(5)
+    
+
+    if os.path.exists(chart_file):
+        os.remove(chart_file)
+        print(f"File: '{chart_file}' has been deleted.")
+    else:
+        print(f"File: '{chart_file}' was not deleted properly.")
+
+display_plotly_chart(fig)
 
