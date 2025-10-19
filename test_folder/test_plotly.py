@@ -29,8 +29,8 @@ def display_plotly_chart(fig:go.Figure, chart_file:str = 'my_chart.html'):
     fig.write_html(chart_file, auto_open=True)
 
     # Add a short delay to give the browser time to open the file
-    print("Opening chart in browser. The file will be deleted in 5 seconds...")
-    time.sleep(5)
+    print("Opening chart in browser. The file will be deleted in 10 seconds...")
+    time.sleep(10)
     
 
     if os.path.exists(chart_file):
@@ -40,4 +40,5 @@ def display_plotly_chart(fig:go.Figure, chart_file:str = 'my_chart.html'):
         print(f"File: '{chart_file}' was not deleted properly.")
 
 display_plotly_chart(fig)
+
 
