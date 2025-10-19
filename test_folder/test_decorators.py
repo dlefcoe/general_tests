@@ -18,6 +18,11 @@ Properties of first class functions:
 '''
 
 
+# importing libraries
+import time
+import math
+
+
 print('Example 1: Treating the functions as objects.') 
 
 # Python program to illustrate functions
@@ -141,9 +146,7 @@ print('--- done ---')
 
 print('Exmaple 5: we can easily find out the execution time of a function using a decorator.')
 
-# importing libraries
-import time
-import math
+
 
 # decorator to calculate duration
 # taken by any function.
