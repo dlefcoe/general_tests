@@ -1,0 +1,2621 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>S&P 500 Elements (NASDAQ Highlighted - Dark Mode)</title>
+        <style>
+            body { 
+                font-family: 'Segoe UI', Arial, sans-serif; 
+                margin: 30px; 
+                background-color: #121212; 
+                color: #e0e0e0; 
+            }
+            h2 { color: #ffffff; margin-bottom: 5px; }
+            
+            /* Statistics Dashboard Widgets */
+            .stats-container {
+                display: flex;
+                gap: 20px;
+                margin: 25px 0;
+            }
+            .stat-card {
+                background-color: #1e1e1e;
+                padding: 20px;
+                border-radius: 6px;
+                min-width: 180px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+                border-left: 4px solid #444;
+            }
+            .stat-card.highlight {
+                border-left-color: #ff4d4d;
+            }
+            .stat-label {
+                font-size: 12px;
+                text-transform: uppercase;
+                color: #888888;
+                letter-spacing: 1px;
+                margin-bottom: 5px;
+            }
+            .stat-value {
+                font-size: 28px;
+                font-weight: bold;
+                color: #ffffff;
+            }
+            .stat-value.red-text {
+                color: #ff4d4d;
+            }
+
+            table { 
+                border-collapse: collapse; 
+                width: 100%; 
+                background-color: #1e1e1e; 
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
+                margin-top: 20px;
+            }
+            th { 
+                background-color: #2a2a2a; 
+                color: #ffffff; 
+                font-weight: 600;
+                padding: 14px 12px;
+                text-align: left;
+                border-bottom: 2px solid #333333;
+            }
+            td { 
+                padding: 12px; 
+                text-align: left; 
+                border-bottom: 1px solid #2d2d2d;
+                color: #cccccc;
+            }
+            tr:nth-child(even) { background-color: #161616; }
+            tr:hover { background-color: #262626; }
+        </style>
+    </head>
+    <body>
+        <h2>S&P 500 Index Constituents</h2>
+        
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-label">Total S&P 500 Listings</div>
+                <div class="stat-value">503</div>
+            </div>
+            <div class="stat-card highlight">
+                <div class="stat-label">NASDAQ-100 Listings</div>
+                <div class="stat-value red-text">88</div>
+            </div>
+            <div class="stat-card highlight">
+                <div class="stat-label">Index Representation</div>
+                <div class="stat-value red-text">17.5%</div>
+            </div>
+        </div>
+
+        <table border="1" class="dataframe dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Ticker</th>
+      <th>Company Name</th>
+      <th>Sector / Exchange</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MMM</td>
+      <td>3M</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AOS</td>
+      <td>A. O. Smith</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ABT</td>
+      <td>Abbott Laboratories</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ABBV</td>
+      <td>AbbVie</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ACN</td>
+      <td>Accenture</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">ADBE</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Adobe Inc.</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">AMD</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Advanced Micro Devices</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>AES</td>
+      <td>AES Corporation</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AFL</td>
+      <td>Aflac</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>Agilent Technologies</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>APD</td>
+      <td>Air Products</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">ABNB</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Airbnb</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Discretionary (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>AKAM</td>
+      <td>Akamai Technologies</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ALB</td>
+      <td>Albemarle Corporation</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ARE</td>
+      <td>Alexandria Real Estate Equities</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ALGN</td>
+      <td>Align Technology</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ALLE</td>
+      <td>Allegion</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LNT</td>
+      <td>Alliant Energy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ALL</td>
+      <td>Allstate</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">GOOGL</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Alphabet Inc. (Class A)</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Communication Services (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">GOOG</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Alphabet Inc. (Class C)</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Communication Services (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>MO</td>
+      <td>Altria</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">AMZN</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Amazon</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Discretionary (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>AMCR</td>
+      <td>Amcor</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AEE</td>
+      <td>Ameren</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">AEP</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">American Electric Power</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Utilities (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>AXP</td>
+      <td>American Express</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AIG</td>
+      <td>American International Group</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AMT</td>
+      <td>American Tower</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AWK</td>
+      <td>American Water Works</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AMP</td>
+      <td>Ameriprise Financial</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AME</td>
+      <td>Ametek</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">AMGN</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Amgen</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Health Care (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>APH</td>
+      <td>Amphenol</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">ADI</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Analog Devices</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>AON</td>
+      <td>Aon plc</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>APA</td>
+      <td>APA Corporation</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>APO</td>
+      <td>Apollo Global Management</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">AAPL</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Apple Inc.</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">AMAT</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Applied Materials</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">APP</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">AppLovin</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>APTV</td>
+      <td>Aptiv</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ACGL</td>
+      <td>Arch Capital Group</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ADM</td>
+      <td>Archer Daniels Midland</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ARES</td>
+      <td>Ares Management</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ANET</td>
+      <td>Arista Networks</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AJG</td>
+      <td>Arthur J. Gallagher & Co.</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AIZ</td>
+      <td>Assurant</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>T</td>
+      <td>AT&T</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ATO</td>
+      <td>Atmos Energy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">ADSK</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Autodesk</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">ADP</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Automatic Data Processing</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>AZO</td>
+      <td>AutoZone</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AVB</td>
+      <td>AvalonBay Communities</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>AVY</td>
+      <td>Avery Dennison</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">AXON</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Axon Enterprise</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">BKR</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Baker Hughes</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Energy (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>BALL</td>
+      <td>Ball Corporation</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BAC</td>
+      <td>Bank of America</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BAX</td>
+      <td>Baxter International</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BDX</td>
+      <td>Becton Dickinson</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BRK.B</td>
+      <td>Berkshire Hathaway</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BBY</td>
+      <td>Best Buy</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TECH</td>
+      <td>Bio-Techne</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BIIB</td>
+      <td>Biogen</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BLK</td>
+      <td>BlackRock</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BX</td>
+      <td>Blackstone Inc.</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>XYZ</td>
+      <td>Block, Inc.</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BNY</td>
+      <td>BNY Mellon</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BA</td>
+      <td>Boeing</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">BKNG</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Booking Holdings</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Discretionary (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>BSX</td>
+      <td>Boston Scientific</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BMY</td>
+      <td>Bristol Myers Squibb</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">AVGO</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Broadcom</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>BR</td>
+      <td>Broadridge Financial Solutions</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BRO</td>
+      <td>Brown & Brown</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BF.B</td>
+      <td>Brown–Forman</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BLDR</td>
+      <td>Builders FirstSource</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BG</td>
+      <td>Bunge Global</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BXP</td>
+      <td>BXP, Inc.</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CHRW</td>
+      <td>C.H. Robinson</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CDNS</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Cadence Design Systems</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>CPT</td>
+      <td>Camden Property Trust</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CPB</td>
+      <td>Campbell's Company (The)</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>COF</td>
+      <td>Capital One</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CAH</td>
+      <td>Cardinal Health</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CCL</td>
+      <td>Carnival Corporation</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CARR</td>
+      <td>Carrier Global</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CVNA</td>
+      <td>Carvana</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CASY</td>
+      <td>Casey's</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CAT</td>
+      <td>Caterpillar Inc.</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CBOE</td>
+      <td>Cboe Global Markets</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CBRE</td>
+      <td>CBRE Group</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CDW</td>
+      <td>CDW Corporation</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>COR</td>
+      <td>Cencora</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CNC</td>
+      <td>Centene Corporation</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CNP</td>
+      <td>CenterPoint Energy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CF</td>
+      <td>CF Industries</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CRL</td>
+      <td>Charles River Laboratories</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SCHW</td>
+      <td>Charles Schwab Corporation</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CHTR</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Charter Communications</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Communication Services (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>CVX</td>
+      <td>Chevron Corporation</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CMG</td>
+      <td>Chipotle Mexican Grill</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CB</td>
+      <td>Chubb Limited</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CHD</td>
+      <td>Church & Dwight</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CIEN</td>
+      <td>Ciena</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CI</td>
+      <td>Cigna</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CINF</td>
+      <td>Cincinnati Financial</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CTAS</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Cintas</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CSCO</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Cisco</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>Citigroup</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CFG</td>
+      <td>Citizens Financial Group</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CLX</td>
+      <td>Clorox</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CME</td>
+      <td>CME Group</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CMS</td>
+      <td>CMS Energy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>KO</td>
+      <td>Coca-Cola Company (The)</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CTSH</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Cognizant</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>COHR</td>
+      <td>Coherent Corp.</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>COIN</td>
+      <td>Coinbase</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CL</td>
+      <td>Colgate-Palmolive</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CMCSA</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Comcast</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Communication Services (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>FIX</td>
+      <td>Comfort Systems USA</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CAG</td>
+      <td>Conagra Brands</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>COP</td>
+      <td>ConocoPhillips</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ED</td>
+      <td>Consolidated Edison</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>STZ</td>
+      <td>Constellation Brands</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CEG</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Constellation Energy</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Utilities (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>COO</td>
+      <td>Cooper Companies (The)</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CPRT</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Copart</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>GLW</td>
+      <td>Corning Inc.</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CPAY</td>
+      <td>Corpay</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CTVA</td>
+      <td>Corteva</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CSGP</td>
+      <td>CoStar Group</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">COST</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Costco</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Staples (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>CRH</td>
+      <td>CRH plc</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CRWD</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CrowdStrike</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>CCI</td>
+      <td>Crown Castle</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CSX</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">CSX Corporation</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>CMI</td>
+      <td>Cummins</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CVS</td>
+      <td>CVS Health</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DHR</td>
+      <td>Danaher Corporation</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DRI</td>
+      <td>Darden Restaurants</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">DDOG</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Datadog</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>DVA</td>
+      <td>DaVita</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DECK</td>
+      <td>Deckers Brands</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DE</td>
+      <td>Deere & Company</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DELL</td>
+      <td>Dell Technologies</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DAL</td>
+      <td>Delta Air Lines</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DVN</td>
+      <td>Devon Energy</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">DXCM</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Dexcom</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Health Care (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">FANG</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Diamondback Energy</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Energy (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>DLR</td>
+      <td>Digital Realty</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DG</td>
+      <td>Dollar General</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DLTR</td>
+      <td>Dollar Tree</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>Dominion Energy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DPZ</td>
+      <td>Domino's</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">DASH</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">DoorDash</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Discretionary (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>DOV</td>
+      <td>Dover Corporation</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DOW</td>
+      <td>Dow Inc.</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DHI</td>
+      <td>D. R. Horton</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DTE</td>
+      <td>DTE Energy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DUK</td>
+      <td>Duke Energy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DD</td>
+      <td>DuPont</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ETN</td>
+      <td>Eaton Corporation</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EBAY</td>
+      <td>eBay Inc.</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SATS</td>
+      <td>EchoStar</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ECL</td>
+      <td>Ecolab</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EIX</td>
+      <td>Edison International</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EW</td>
+      <td>Edwards Lifesciences</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">EA</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Electronic Arts</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Communication Services (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>ELV</td>
+      <td>Elevance Health</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EME</td>
+      <td>Emcor</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EMR</td>
+      <td>Emerson Electric</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ETR</td>
+      <td>Entergy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EOG</td>
+      <td>EOG Resources</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EQT</td>
+      <td>EQT Corporation</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EFX</td>
+      <td>Equifax</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EQIX</td>
+      <td>Equinix</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EQR</td>
+      <td>Equity Residential</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ERIE</td>
+      <td>Erie Indemnity</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ESS</td>
+      <td>Essex Property Trust</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EL</td>
+      <td>Estée Lauder Companies (The)</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EG</td>
+      <td>Everest Group</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EVRG</td>
+      <td>Evergy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ES</td>
+      <td>Eversource Energy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">EXC</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Exelon</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Utilities (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>EXE</td>
+      <td>Expand Energy</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EXPE</td>
+      <td>Expedia Group</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EXPD</td>
+      <td>Expeditors International</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>EXR</td>
+      <td>Extra Space Storage</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>XOM</td>
+      <td>ExxonMobil</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FFIV</td>
+      <td>F5, Inc.</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FDS</td>
+      <td>FactSet</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FICO</td>
+      <td>Fair Isaac</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">FAST</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Fastenal</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>FRT</td>
+      <td>Federal Realty Investment Trust</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FDX</td>
+      <td>FedEx</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FDXF</td>
+      <td>FedEx Freight</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FIS</td>
+      <td>Fidelity National Information Services</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FITB</td>
+      <td>Fifth Third Bancorp</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FSLR</td>
+      <td>First Solar</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FE</td>
+      <td>FirstEnergy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FISV</td>
+      <td>Fiserv</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>Ford Motor Company</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">FTNT</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Fortinet</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>FTV</td>
+      <td>Fortive</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FOXA</td>
+      <td>Fox Corporation (Class A)</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FOX</td>
+      <td>Fox Corporation (Class B)</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>BEN</td>
+      <td>Franklin Resources</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>FCX</td>
+      <td>Freeport-McMoRan</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GRMN</td>
+      <td>Garmin</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>IT</td>
+      <td>Gartner</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GE</td>
+      <td>GE Aerospace</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">GEHC</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">GE HealthCare</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Health Care (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>GEV</td>
+      <td>GE Vernova</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GEN</td>
+      <td>Gen Digital</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GNRC</td>
+      <td>Generac</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GD</td>
+      <td>General Dynamics</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GIS</td>
+      <td>General Mills</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GM</td>
+      <td>General Motors</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GPC</td>
+      <td>Genuine Parts Company</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">GILD</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Gilead Sciences</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Health Care (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>GPN</td>
+      <td>Global Payments</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GL</td>
+      <td>Globe Life</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GDDY</td>
+      <td>GoDaddy</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GS</td>
+      <td>Goldman Sachs</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HAL</td>
+      <td>Halliburton</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HIG</td>
+      <td>Hartford (The)</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HAS</td>
+      <td>Hasbro</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HCA</td>
+      <td>HCA Healthcare</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>DOC</td>
+      <td>Healthpeak Properties</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HSIC</td>
+      <td>Henry Schein</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HSY</td>
+      <td>Hershey Company (The)</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HPE</td>
+      <td>Hewlett Packard Enterprise</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HLT</td>
+      <td>Hilton Worldwide</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HD</td>
+      <td>Home Depot (The)</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">HON</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Honeywell</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>HRL</td>
+      <td>Hormel Foods</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HST</td>
+      <td>Host Hotels & Resorts</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HWM</td>
+      <td>Howmet Aerospace</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HPQ</td>
+      <td>HP Inc.</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HUBB</td>
+      <td>Hubbell Incorporated</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HUM</td>
+      <td>Humana</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HBAN</td>
+      <td>Huntington Bancshares</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HII</td>
+      <td>Huntington Ingalls Industries</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>IBM</td>
+      <td>IBM</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>IEX</td>
+      <td>IDEX Corporation</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">IDXX</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Idexx Laboratories</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Health Care (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>ITW</td>
+      <td>Illinois Tool Works</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>INCY</td>
+      <td>Incyte</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>IR</td>
+      <td>Ingersoll Rand</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PODD</td>
+      <td>Insulet Corporation</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">INTC</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Intel</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>IBKR</td>
+      <td>Interactive Brokers</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ICE</td>
+      <td>Intercontinental Exchange</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>IFF</td>
+      <td>International Flavors & Fragrances</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>IP</td>
+      <td>International Paper</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">INTU</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Intuit</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">ISRG</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Intuitive Surgical</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Health Care (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>IVZ</td>
+      <td>Invesco</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>INVH</td>
+      <td>Invitation Homes</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>IQV</td>
+      <td>IQVIA</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>IRM</td>
+      <td>Iron Mountain</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>JBHT</td>
+      <td>J.B. Hunt</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>JBL</td>
+      <td>Jabil</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>JKHY</td>
+      <td>Jack Henry & Associates</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>J</td>
+      <td>Jacobs Solutions</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>JNJ</td>
+      <td>Johnson & Johnson</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>JCI</td>
+      <td>Johnson Controls</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>JPM</td>
+      <td>JPMorgan Chase</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>KVUE</td>
+      <td>Kenvue</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">KDP</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Keurig Dr Pepper</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Staples (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>KEY</td>
+      <td>KeyCorp</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>KEYS</td>
+      <td>Keysight Technologies</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>KMB</td>
+      <td>Kimberly-Clark</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>KIM</td>
+      <td>Kimco Realty</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>KMI</td>
+      <td>Kinder Morgan</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>KKR</td>
+      <td>KKR & Co.</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">KLAC</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">KLA Corporation</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">KHC</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Kraft Heinz</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Staples (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>KR</td>
+      <td>Kroger</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LHX</td>
+      <td>L3Harris</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LH</td>
+      <td>Labcorp</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">LRCX</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Lam Research</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>LVS</td>
+      <td>Las Vegas Sands</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LDOS</td>
+      <td>Leidos</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LEN</td>
+      <td>Lennar</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LII</td>
+      <td>Lennox International</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LLY</td>
+      <td>Lilly (Eli)</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">LIN</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Linde plc</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Materials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>LYV</td>
+      <td>Live Nation Entertainment</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LMT</td>
+      <td>Lockheed Martin</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>L</td>
+      <td>Loews Corporation</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LOW</td>
+      <td>Lowe's</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LULU</td>
+      <td>Lululemon Athletica</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">LITE</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Lumentum</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>LYB</td>
+      <td>LyondellBasell</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MTB</td>
+      <td>M&T Bank</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MPC</td>
+      <td>Marathon Petroleum</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">MAR</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Marriott International</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Discretionary (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>MRSH</td>
+      <td>Marsh McLennan</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MLM</td>
+      <td>Martin Marietta Materials</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MAS</td>
+      <td>Masco</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MA</td>
+      <td>Mastercard</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MKC</td>
+      <td>McCormick & Company</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MCD</td>
+      <td>McDonald's</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MCK</td>
+      <td>McKesson Corporation</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MDT</td>
+      <td>Medtronic</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MRK</td>
+      <td>Merck & Co.</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">META</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Meta Platforms</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Communication Services (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>MET</td>
+      <td>MetLife</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MTD</td>
+      <td>Mettler Toledo</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MGM</td>
+      <td>MGM Resorts</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">MCHP</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Microchip Technology</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">MU</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Micron Technology</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">MSFT</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Microsoft</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>MAA</td>
+      <td>Mid-America Apartment Communities</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MRNA</td>
+      <td>Moderna</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TAP</td>
+      <td>Molson Coors Beverage Company</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">MDLZ</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Mondelez International</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Staples (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">MPWR</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Monolithic Power Systems</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">MNST</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Monster Beverage</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Staples (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>MCO</td>
+      <td>Moody's Corporation</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MS</td>
+      <td>Morgan Stanley</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MOS</td>
+      <td>Mosaic Company (The)</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MSI</td>
+      <td>Motorola Solutions</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>MSCI</td>
+      <td>MSCI Inc.</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NDAQ</td>
+      <td>Nasdaq, Inc.</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NTAP</td>
+      <td>NetApp</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">NFLX</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Netflix</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Communication Services (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>NEM</td>
+      <td>Newmont</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NWSA</td>
+      <td>News Corp (Class A)</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NWS</td>
+      <td>News Corp (Class B)</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NEE</td>
+      <td>NextEra Energy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NKE</td>
+      <td>Nike, Inc.</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NI</td>
+      <td>NiSource</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NDSN</td>
+      <td>Nordson Corporation</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NSC</td>
+      <td>Norfolk Southern</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NTRS</td>
+      <td>Northern Trust</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NOC</td>
+      <td>Northrop Grumman</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NCLH</td>
+      <td>Norwegian Cruise Line Holdings</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NRG</td>
+      <td>NRG Energy</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NUE</td>
+      <td>Nucor</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">NVDA</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Nvidia</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>NVR</td>
+      <td>NVR, Inc.</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">NXPI</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">NXP Semiconductors</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">ORLY</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">O’Reilly Automotive</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Discretionary (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>OXY</td>
+      <td>Occidental Petroleum</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">ODFL</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Old Dominion</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>OMC</td>
+      <td>Omnicom Group</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ON</td>
+      <td>ON Semiconductor</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>OKE</td>
+      <td>Oneok</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ORCL</td>
+      <td>Oracle Corporation</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>OTIS</td>
+      <td>Otis Worldwide</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">PCAR</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Paccar</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>PKG</td>
+      <td>Packaging Corporation of America</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">PLTR</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Palantir Technologies</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">PANW</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Palo Alto Networks</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>PSKY</td>
+      <td>Paramount Skydance Corporation</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PH</td>
+      <td>Parker Hannifin</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">PAYX</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Paychex</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">PYPL</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">PayPal</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Financials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>PNR</td>
+      <td>Pentair</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">PEP</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">PepsiCo</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Staples (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>PFE</td>
+      <td>Pfizer</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PCG</td>
+      <td>PG&E Corporation</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PM</td>
+      <td>Philip Morris International</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PSX</td>
+      <td>Phillips 66</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PNW</td>
+      <td>Pinnacle West Capital</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PNC</td>
+      <td>PNC Financial Services</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>POOL</td>
+      <td>Pool Corporation</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PPG</td>
+      <td>PPG Industries</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PPL</td>
+      <td>PPL Corporation</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PFG</td>
+      <td>Principal Financial Group</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PG</td>
+      <td>Procter & Gamble</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PGR</td>
+      <td>Progressive Corporation</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PLD</td>
+      <td>Prologis</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PRU</td>
+      <td>Prudential Financial</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PEG</td>
+      <td>Public Service Enterprise Group</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PTC</td>
+      <td>PTC Inc.</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PSA</td>
+      <td>Public Storage</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PHM</td>
+      <td>PulteGroup</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>PWR</td>
+      <td>Quanta Services</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">QCOM</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Qualcomm</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>DGX</td>
+      <td>Quest Diagnostics</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>Q</td>
+      <td>Qnity Electronics</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>RL</td>
+      <td>Ralph Lauren Corporation</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>RJF</td>
+      <td>Raymond James Financial</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>RTX</td>
+      <td>RTX Corporation</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>O</td>
+      <td>Realty Income</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>REG</td>
+      <td>Regency Centers</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">REGN</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Regeneron Pharmaceuticals</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Health Care (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>RF</td>
+      <td>Regions Financial Corporation</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>RSG</td>
+      <td>Republic Services</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>RMD</td>
+      <td>ResMed</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>RVTY</td>
+      <td>Revvity</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>HOOD</td>
+      <td>Robinhood Markets</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ROK</td>
+      <td>Rockwell Automation</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ROL</td>
+      <td>Rollins, Inc.</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">ROP</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Roper Technologies</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">ROST</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Ross Stores</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Discretionary (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>RCL</td>
+      <td>Royal Caribbean Group</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SPGI</td>
+      <td>S&P Global</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>CRM</td>
+      <td>Salesforce</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">SNDK</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Sandisk</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>SBAC</td>
+      <td>SBA Communications</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SLB</td>
+      <td>Schlumberger</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">STX</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Seagate Technology</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>SRE</td>
+      <td>Sempra</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>NOW</td>
+      <td>ServiceNow</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SHW</td>
+      <td>Sherwin-Williams</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SPG</td>
+      <td>Simon Property Group</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SWKS</td>
+      <td>Skyworks Solutions</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SJM</td>
+      <td>J.M. Smucker Company (The)</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SW</td>
+      <td>Smurfit Westrock</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SNA</td>
+      <td>Snap-on</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SOLV</td>
+      <td>Solventum</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SO</td>
+      <td>Southern Company</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>LUV</td>
+      <td>Southwest Airlines</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SWK</td>
+      <td>Stanley Black & Decker</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">SBUX</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Starbucks</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Discretionary (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>STT</td>
+      <td>State Street Corporation</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>STLD</td>
+      <td>Steel Dynamics</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>STE</td>
+      <td>Steris</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SYK</td>
+      <td>Stryker Corporation</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SMCI</td>
+      <td>Supermicro</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>SYF</td>
+      <td>Synchrony Financial</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">SNPS</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Synopsys</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>SYY</td>
+      <td>Sysco</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">TMUS</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">T-Mobile US</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Communication Services (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>TROW</td>
+      <td>T. Rowe Price</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">TTWO</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Take-Two Interactive</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Communication Services (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>TPR</td>
+      <td>Tapestry, Inc.</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TRGP</td>
+      <td>Targa Resources</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TGT</td>
+      <td>Target Corporation</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TEL</td>
+      <td>TE Connectivity</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TDY</td>
+      <td>Teledyne Technologies</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TER</td>
+      <td>Teradyne</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">TSLA</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Tesla, Inc.</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Discretionary (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">TXN</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Texas Instruments</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>TPL</td>
+      <td>Texas Pacific Land Corporation</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TXT</td>
+      <td>Textron</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TMO</td>
+      <td>Thermo Fisher Scientific</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TJX</td>
+      <td>TJX Companies</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TKO</td>
+      <td>TKO Group Holdings</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TTD</td>
+      <td>Trade Desk (The)</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TSCO</td>
+      <td>Tractor Supply</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TT</td>
+      <td>Trane Technologies</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TDG</td>
+      <td>TransDigm Group</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TRV</td>
+      <td>Travelers Companies (The)</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TRMB</td>
+      <td>Trimble Inc.</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TFC</td>
+      <td>Truist Financial</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TYL</td>
+      <td>Tyler Technologies</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>TSN</td>
+      <td>Tyson Foods</td>
+      <td>Consumer Staples (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>USB</td>
+      <td>U.S. Bancorp</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>UBER</td>
+      <td>Uber</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>UDR</td>
+      <td>UDR, Inc.</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ULTA</td>
+      <td>Ulta Beauty</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>UNP</td>
+      <td>Union Pacific Corporation</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>UAL</td>
+      <td>United Airlines Holdings</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>UPS</td>
+      <td>United Parcel Service</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>URI</td>
+      <td>United Rentals</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>UNH</td>
+      <td>UnitedHealth Group</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>UHS</td>
+      <td>Universal Health Services</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>VLO</td>
+      <td>Valero Energy</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>VEEV</td>
+      <td>Veeva Systems</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>VTR</td>
+      <td>Ventas</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>VLTO</td>
+      <td>Veralto</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>VRSN</td>
+      <td>Verisign</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">VRSK</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Verisk Analytics</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Industrials (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>VZ</td>
+      <td>Verizon</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">VRTX</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Vertex Pharmaceuticals</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Health Care (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>VRT</td>
+      <td>Vertiv</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>VTRS</td>
+      <td>Viatris</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>VICI</td>
+      <td>Vici Properties</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>V</td>
+      <td>Visa Inc.</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>VST</td>
+      <td>Vistra Corp.</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>VMC</td>
+      <td>Vulcan Materials Company</td>
+      <td>Materials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>WRB</td>
+      <td>W. R. Berkley Corporation</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>GWW</td>
+      <td>W. W. Grainger</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>WAB</td>
+      <td>Wabtec</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">WMT</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Walmart</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Consumer Staples (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>DIS</td>
+      <td>Walt Disney Company (The)</td>
+      <td>Communication Services (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">WBD</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Warner Bros. Discovery</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Communication Services (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>WM</td>
+      <td>Waste Management</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>WAT</td>
+      <td>Waters Corporation</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>WEC</td>
+      <td>WEC Energy Group</td>
+      <td>Utilities (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>WFC</td>
+      <td>Wells Fargo</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>WELL</td>
+      <td>Welltower</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>WST</td>
+      <td>West Pharmaceutical Services</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">WDC</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Western Digital</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>WY</td>
+      <td>Weyerhaeuser</td>
+      <td>Real Estate (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>WSM</td>
+      <td>Williams-Sonoma, Inc.</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>WMB</td>
+      <td>Williams Companies</td>
+      <td>Energy (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>WTW</td>
+      <td>Willis Towers Watson</td>
+      <td>Financials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">WDAY</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Workday, Inc.</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Information Technology (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>WYNN</td>
+      <td>Wynn Resorts</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td><span style="color: #ff4d4d; font-weight: bold;">XEL</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Xcel Energy</span></td>
+      <td><span style="color: #ff4d4d; font-weight: bold;">Utilities (NASDAQ)</span></td>
+    </tr>
+    <tr>
+      <td>XYL</td>
+      <td>Xylem Inc.</td>
+      <td>Industrials (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>YUM</td>
+      <td>Yum! Brands</td>
+      <td>Consumer Discretionary (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ZBRA</td>
+      <td>Zebra Technologies</td>
+      <td>Information Technology (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ZBH</td>
+      <td>Zimmer Biomet</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+    <tr>
+      <td>ZTS</td>
+      <td>Zoetis</td>
+      <td>Health Care (NYSE/Other)</td>
+    </tr>
+  </tbody>
+</table>
+    </body>
+    </html>
+    
