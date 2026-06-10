@@ -275,3 +275,6 @@ if __name__ == "__main__":
         generate_html_dashboard(headlines)
     else:
         print("Scraper returned zero items. Verify connections.")
+
+
+        
