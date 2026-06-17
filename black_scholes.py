@@ -10,7 +10,7 @@ from scipy.stats import norm
 
 
 # define variables
-r = 0.01    # 1% = 0.01
+r = 0.01    # risk free rate, 1% = 0.01
 s = 30      # price of underlying, ccy
 k = 40      # price of strike, ccy
 t = 240/365 # number of years
@@ -46,4 +46,21 @@ def black_scholes(r,s,k,t,v,y)->float|None:
 
 prem = black_scholes(r,s,k,t,v,y)
 print(round(prem, 2))
+print(f'bid: {round(prem*0.98, 2)}, ask: {round(prem*1.02, 2)}')
+
+
+
+
+# define variables
+r = 0.05    # risk free rate, 1% = 0.01
+s = 30      # price of underlying
+k = 40      # price of strike
+t = 240/365 # number of years
+v = 0.30    # volatility
+y = 'put'     # type, call or put
+prem = black_scholes(r,s,k,t,v,y)
+print(round(prem, 2))
+print(f'bid: {round(prem*0.98, 2)}, ask: {round(prem*1.02, 2)}')
+
+
 
