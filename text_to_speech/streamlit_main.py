@@ -64,6 +64,10 @@ def play_audio(file_path: str) -> None:
         mime="audio/wav",
     )
 
+    # delete the output file
+    os.remove(file_path)
+
+
 
 def main():
     st.title("Piper TTS Speech Generator")
@@ -76,6 +80,7 @@ def main():
 
     if st.button("Read Generated Audio"):
         play_audio(OUTPUT_WAV)
+
 
 
 if __name__ == "__main__":
