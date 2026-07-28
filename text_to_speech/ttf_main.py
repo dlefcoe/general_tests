@@ -116,7 +116,8 @@ def main():
     voice = prepare_voice(model_path, config_path, slowdown_factor=1.25, smoothness_factor=0.50)
 
     # 4. read text from a file or define it directly
-    text_file_path = "C:/Users/admin/Downloads/fun_fun.txt"
+    text_file_path = "C:/Users/admin/Downloads/fun_fun.txt"  # desktop
+    text_file_path = "C:/Users/Owner/Downloads/fun_fun.txt"  # laptop
     text = get_text_from_file(text_file_path)
 
     # 5. Synthesize directly using synthesize_wav 
@@ -126,3 +127,5 @@ def main():
 # main guard idiom
 if __name__ == "__main__":
     main()
+
+
