@@ -80,6 +80,23 @@ def synthesize_wav(voice, text="some placeholder text", output_wav= "text_to_spe
     print(f"Done! The file is here: {output_wav}.")
     return True
 
+def get_text_from_file(file_path: str|None) -> str:
+    """function to read text from a file or return placeholder text if file_path is None"""
+
+    print("Reading text from file...")
+
+    if file_path is None:
+        text = "some placeholder text."
+        return text
+    
+    if  not os.path.exists(file_path):
+        raise FileNotFoundError(f"The file {file_path} does not exist.")
+    
+    with open(file_path, "r", encoding="utf-8") as file:
+        text = file.read()
+
+    return text
+
 def main():
     # 1. Setup paths for model and config files
     model_path, config_path = setup_paths()
@@ -98,12 +115,12 @@ def main():
     print("Loading voice...")
     voice = prepare_voice(model_path, config_path, slowdown_factor=1.25, smoothness_factor=0.50)
 
-    # 5. Synthesize directly using synthesize_wav
-    text = """
-    the code works 3
-    """
-    # output_wav = "text_to_speech/output.wav"
+    # 4. read text from a file or define it directly
+    text_file_path = "C:/Users/admin/Downloads/fun_fun.txt"
+    text = get_text_from_file(text_file_path)
 
+    # 5. Synthesize directly using synthesize_wav 
+    # output_wav = "text_to_speech/output.wav"
     synthesize_wav(voice, text)
 
 # main guard idiom
