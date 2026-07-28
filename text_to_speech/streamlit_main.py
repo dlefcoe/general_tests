@@ -12,7 +12,9 @@ OUTPUT_WAV = "text_to_speech/output_stream.wav"
 
 
 @st.cache_resource
-def setup_piper_voice() -> PiperVoice | None:
+def setup_piper_voice(
+    slowdown_factor=1.25, smoothness_factor=0.50
+) -> None | PiperVoice:
     """Loads and caches the Piper TTS voice model."""
     model_path, config_path = tts_helper.setup_paths()
     base_url = tts_helper.base_url_select()
@@ -22,7 +24,7 @@ def setup_piper_voice() -> PiperVoice | None:
         return None
 
     return tts_helper.prepare_voice(
-        model_path, config_path, slowdown_factor=1.25, smoothness_factor=0.50
+        model_path, config_path, slowdown_factor, smoothness_factor
     )
 
 
@@ -68,19 +70,36 @@ def play_audio(file_path: str) -> None:
     os.remove(file_path)
 
 
-
 def main():
     st.title("Piper TTS Speech Generator")
 
     text_input = st.text_area("Enter Text:", "Hello... take a deep breath, and relax.")
-    voice = setup_piper_voice()
+
+    # TODO: set up speed sliders.
+    # slowdown factor 0.5 to 2.0
+    slowdown_factor = st.slider(
+        label="slowdown factor:",
+        min_value=0.5,
+        max_value=2.0,
+        value=1.2,  # Default starting position
+        step=0.1,
+    )
+    # smoothness factor 0.25 to 1.00
+    smoothness_factor = st.slider(
+        label="smoothness:",
+        min_value=0.2,
+        max_value=1.0,
+        value=0.6,  # Default starting position
+        step=0.1,
+    )
+
+    voice = setup_piper_voice(slowdown_factor=slowdown_factor, smoothness_factor=smoothness_factor)
 
     if st.button("Generate Speech"):
         handle_synthesis(text_input, voice)
 
     if st.button("Read Generated Audio"):
         play_audio(OUTPUT_WAV)
-
 
 
 if __name__ == "__main__":
