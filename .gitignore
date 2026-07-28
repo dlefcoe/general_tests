@@ -222,3 +222,6 @@ __marimo__/
 # large files
 voices/*.onnxvoices/*.onnx
 voices/*.onnx
+
+# specific outputs
+text_to_speech\output.wav
