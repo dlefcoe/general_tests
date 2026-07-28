@@ -7,7 +7,12 @@ authors = [
     { name = "dlefcoe", email = "dlefcoe@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "numpy>=2.5.1",
+    "pandas>=3.0.5",
+    "piper-tts>=1.6.0",
+    "streamlit>=1.60.0",
+]
 
 [project.scripts]
 general-tests = "general_tests:main"
