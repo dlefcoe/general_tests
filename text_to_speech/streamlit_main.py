@@ -83,6 +83,7 @@ def main():
         max_value=2.0,
         value=1.2,  # Default starting position
         step=0.1,
+        help="larger number means slower  --  1.0 means normal speed  --  1.2 means 20 percent slower"
     )
     # smoothness factor 0.25 to 1.00
     smoothness_factor = st.slider(
@@ -91,6 +92,7 @@ def main():
         max_value=1.0,
         value=0.6,  # Default starting position
         step=0.1,
+        help="0.667 Smooths out pitch fluctuations"
     )
 
     voice = setup_piper_voice(slowdown_factor=slowdown_factor, smoothness_factor=smoothness_factor)
