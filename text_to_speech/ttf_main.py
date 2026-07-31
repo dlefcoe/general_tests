@@ -7,7 +7,7 @@ from piper import PiperVoice
 
 def setup_paths():
     """function to setup paths for model and config files"""
-    output_dir = "./voices"
+    output_dir = "voices"
     os.makedirs(output_dir, exist_ok=True)
 
     model_name = "en_GB-cori-high"
