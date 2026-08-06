@@ -1,12 +1,22 @@
 '''
-uv run streamlit run yhoo_finance_01.py
+uv run streamlit run yhoo_finance_02.py
 '''
 
+import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 import yfinance as yf
 from plotly.subplots import make_subplots
+
+
+def calculate_rolling_volatility(
+    prices: pd.Series, period: int, trading_days: int = 252
+) -> pd.Series:
+    """Calculates rolling annualized volatility for a given day period."""
+    daily_returns = prices.pct_change()
+    rolling_std = daily_returns.rolling(window=period).std()
+    return rolling_std * np.sqrt(trading_days)
 
 
 @st.cache_data
@@ -33,20 +43,30 @@ def load_data(source: str = "web") -> pd.DataFrame:
         df = df.reset_index()
 
     df["Date"] = pd.to_datetime(df["Date"])
+
+    # Calculate rolling volatility columns
+    df["Vol_20D"] = calculate_rolling_volatility(df["Close"], period=20)
+    df["Vol_60D"] = calculate_rolling_volatility(df["Close"], period=60)
+
     return df
 
 
 def display_metrics(df: pd.DataFrame) -> None:
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4, col5, col6 = st.columns(6)
     latest_close = df["Close"].iloc[-1]
     prev_close = df["Close"].iloc[-2]
     change = latest_close - prev_close
     pct_change = (change / prev_close) * 100
 
+    vol_20d = df["Vol_20D"].iloc[-1]
+    vol_60d = df["Vol_60D"].iloc[-1]
+
     col1.metric("Latest Close", f"{latest_close:,.2f}", f"{change:+.2f} ({pct_change:+.2f}%)")
     col2.metric("High", f"{df['High'].iloc[-1]:,.2f}")
     col3.metric("Low", f"{df['Low'].iloc[-1]:,.2f}")
     col4.metric("Volume", f"{int(df['Volume'].iloc[-1]):,}")
+    col5.metric("20D Volatility", f"{vol_20d:.2%}" if pd.notna(vol_20d) else "N/A")
+    col6.metric("60D Volatility", f"{vol_60d:.2%}" if pd.notna(vol_60d) else "N/A")
 
 
 def display_chart(df: pd.DataFrame) -> None:
@@ -58,6 +78,7 @@ def display_chart(df: pd.DataFrame) -> None:
         row_heights=[0.7, 0.3],
     )
 
+    # Candlestick chart
     fig.add_trace(
         go.Candlestick(
             x=df["Date"],
@@ -71,6 +92,7 @@ def display_chart(df: pd.DataFrame) -> None:
         col=1,
     )
 
+    # Volume bar chart
     fig.add_trace(
         go.Bar(
             x=df["Date"],
