@@ -1,4 +1,5 @@
 # %%
+# import pandas as pd
 import yfinance as yf
 
 # FTSE 100 symbol: ^FTSE | FTSE 250 symbol: ^FTMC

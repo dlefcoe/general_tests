@@ -13,7 +13,8 @@ st.set_page_config(page_title="Financial Data Viewer", layout="wide")
 
 st.title("📈 Stock Price Dashboard")
 
-def get_the_data():
+def get_the_data()->pd.DataFrame:
+    ''' read the data and return a dataframe '''
     ftse100 = yf.Ticker("^FTSE")
     df = ftse100.history(period="1y")
     return df
@@ -21,7 +22,16 @@ def get_the_data():
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("df.csv")
+    # df = pd.read_csv("df.csv")
+    df = get_the_data()
+
+    # Clean whitespace from column names
+    df.columns = df.columns.str.strip()
+
+    # If 'Date' is set as the index, convert it back to a column
+    if df.index.name == "Date" or "Date" not in df.columns:
+        df = df.reset_index()
+
     df["Date"] = pd.to_datetime(df["Date"])
     return df
 
