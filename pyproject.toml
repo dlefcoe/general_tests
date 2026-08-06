@@ -11,7 +11,9 @@ dependencies = [
     "numpy>=2.5.1",
     "pandas>=3.0.5",
     "piper-tts>=1.6.0",
+    "plotly>=6.9.0",
     "streamlit>=1.60.0",
+    "yfinance>=1.5.2",
 ]
 
 [project.scripts]
