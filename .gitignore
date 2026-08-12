@@ -225,7 +225,8 @@ voices/*.onnx
 *onnx
 
 # specific outputs
-text_to_speech\output.wav
+text_to_speech/output.wav
+read_outlook_msg/output_folder/
 
 # microsoft email extracts
 *.msg
